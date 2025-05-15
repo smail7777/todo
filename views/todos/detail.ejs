@@ -1,0 +1,17 @@
+<h2><%= title %></h2>
+
+<div class="todo-detail">
+  <div class="todo-item <%= todo.completed ? 'completed' : '' %>">
+    <h3><%= todo.title %></h3>
+    <p><%= todo.description %></p>
+    <p><strong>Statut:</strong> <%= todo.completed ? 'Terminé' : 'En cours' %></p>
+    
+    <form action="/todos/<%= todo.id %>/toggle" method="POST">
+      <button type="submit">
+        <%= todo.completed ? 'Marquer comme non terminé' : 'Marquer comme terminé' %>
+      </button>
+    </form>
+  </div>
+</div>
+
+<a href="/todos" class="back-link">Retour à la liste</a>
